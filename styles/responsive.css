@@ -1,0 +1,268 @@
+/*
+filename: Bryn Walker 101016859
+author: Bryn Walker
+created: 14/3/2016
+last modified: 11/4/2016
+description: index.html, jobs.html, apply.html, about.html, enhancements.html
+*/
+
+/* http://webdesignerwall.com/tutorials/css-responsive-navigation-menu
+   Sets rules for mobile interface when screen width is less than the width of the desktop menu bar (556px) */
+@media screen and (max-width: 556px) {
+	/* Display previously hidden elements and hide unneeded ones */
+	#desktop {
+		display: none;
+	}
+
+	#mobile {
+		display: inline;
+		width: 100vw;
+		margin: 0;
+	}
+
+	#timetable {
+		display: none;
+	}
+
+
+	/********** GENERIC **********/
+	/* In this section, margins are largely reset, and text is centered for better readability on mobile devices */
+	* {
+		margin-left: 0;
+	}
+
+	a p {
+		color: white;
+	}
+
+	h1, h2, h3, p, label {
+		text-align: center;
+		/* Replacing margin with padding better centers text elements with align-text: center; */
+		margin-left: 0;
+		padding-left: 15px;
+	}
+
+	ul, ol {
+		text-align: center;
+		list-style-type: none;
+		padding: 0;
+		margin-left: 0;
+	}
+
+	fieldset, label, .inline {
+		display: block;
+	}
+
+	aside {
+		float: right;
+		margin: 0;
+	}
+
+	article {
+		display: inline;
+	}
+
+	hr {
+		margin: 0;
+	}
+
+	.apply-button, #submit-button {
+		width: 90%;
+		margin: 5% 5%;
+		padding: 15px 0;
+		border-radius: 4px;
+	}
+
+
+	/********** MENU BAR **********/
+	#menu-button {
+		width: 100%;
+		height: 59px;
+		background-color: #0E4786;
+		color: white;
+		font-size: 2em;
+		margin: 0 0 20px 0;
+		padding: 0;
+	}
+
+	.dropdown-menu > .button {
+		color: white;
+		padding: 0;
+		width: 100vw;
+		height: 60px;
+	}
+
+	.button {
+		/* Enlarges buttons and button text when in mobile mode */
+		font-size: 1.5em;
+	}
+
+	.icon {
+		float: none;
+	}
+
+	/********** IMAGES **********/
+	#logo {
+		padding-top: 20px;
+		float: none;
+		margin: auto;
+		display: block;
+	}
+
+
+	/********** ABOUT **********/
+	#about-left > *:not(h1) {
+		text-align: center;
+	}
+
+	#about-left {
+		width: 100%;
+		float: none;
+		margin: auto;
+	}
+
+	#about-left * {
+		clear: both;
+	}
+
+	#about-right {
+		width: 100%;
+		float: none;
+		margin: auto;
+	}
+
+	#about-right img {
+		float: right;
+		clear: both;
+		margin-right: 30px;
+	}
+
+	#name {
+		clear: both;
+		float: left;
+	}
+
+	#tutorial {
+		clear: right;
+		margin-bottom: 10%; /* Adds space between about section and timetable */
+	}
+
+	#tutor {
+		float: right;
+	}
+
+	#tutor, #tutorial {
+		width: auto;
+		margin-right: 30px;
+	}
+
+	#student-number, #course {
+		float: none;
+	}
+
+
+	/********** TIMETABLE **********/
+	table * {
+		opacity: 1;
+		color: black;
+		text-shadow: none;
+	}
+
+	#responsive-timetable {
+		background-color: white;
+		display: block;
+		clear: both;
+	}
+
+	#responsive-timetable * {
+		/* Removes unneeded hover effects for responsive timetable */
+		box-shadow: none;
+		border-radius: 0px;
+		transform: none;
+	}
+
+	/* Starting from 1, selects every second <td> element in #responsive-timetable and recolours it */
+	#responsive-timetable td:nth-of-type(odd) {
+		background-color: rgb(33, 150, 243);
+		color: rgb(255, 255, 255);
+	}
+
+	/********** FORMS **********/
+	#other-input { /* Resets textarea positioning */
+		display: inline;
+		float: none;
+		margin-left: 0;
+	}
+
+
+	/********** LAYOUT **********/
+	#title {
+		display: none; /* In mobile mode, the logo fills the role of the title on index.html */
+	}
+
+	article aside {
+		margin-bottom: 20px;
+	}
+}
+
+/* Sets rules for mobile interface when screen width is a little over half of standard HD (1000px) */
+@media screen and (max-width: 1000px) {
+	/********** LAYOUT *********/
+	#enhancement-responsive-design {
+		float: none;
+		width: 100%;
+	}
+
+	#enhancement-interactivity {
+		float: none;
+		width: 100%;
+	}
+
+
+	/********** ABOUT **********/
+	.about {
+		margin: 10px 0 10px 30px; /* Shrinks margins to conserve space on smaller screens */
+	}
+
+
+	/********** IMAGES **********/
+	#photo {
+		clear: both;
+	}
+
+
+	/********** FORMS **********/
+	input[type="radio"] {
+		margin: auto;
+	}
+
+	/* Centers and spaces textarea and skills checkboxes */
+	#other-wrapper, #skills * {
+		padding-left: 0;
+	}
+
+	/* The following rules set the checkboxes for the skills in a grid-like layout */
+
+	#skills p {
+		/*float: left;
+		clear: both;*/
+		text-align: center;
+		width: 50%;
+		margin: auto;
+	}
+
+	#skills p:nth-of-type(odd) {
+		float: left;
+	}
+
+	#skills p:nth-of-type(even) {
+		float: right;
+	}
+
+	#skills :last-child {
+		float: none;
+		clear: both;
+		width: 100%;
+		margin: auto;
+	}
+}

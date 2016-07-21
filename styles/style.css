@@ -1,0 +1,459 @@
+/*
+filename: Bryn Walker 101016859
+author: Bryn Walker
+created: 9/3/2016
+last modified: 11/4/2016
+description: index.html, jobs.html, apply.html, about.html, enhancements.html
+*/
+
+/********** GENERIC **********/
+/* Sets default text font and color for the entire website */
+* {
+	font-family: Raleway, sans-serif;
+	color: #263238;
+	text-decoration: none; /* Removes underlines from links */
+	outline: 0; /* Removes dotted outline from links and buttons https://css-tricks.com/removing-the-dotted-outline/ */
+}
+
+body {
+	margin: 0; /* Resets default margins */
+}
+
+h1, h2, h3, p, li, label{
+	margin: 15px 2.7% 0 30px; /* Ensures text does not touch the right edge of the screen. Margins specified in px are done so to avoid margins of text in containers such as articles are not smaller than those outside of these containers */
+}
+
+h1, h2 {
+	font-family: Bitter, serif;
+}
+
+h1 {
+	margin-top: 80px; /* Pushes top level headings below header. Specified px because the menu height does not change. */
+	font-size: 3em;
+	color: #1566C0;
+}
+
+h2 {
+	color: #0E4786;
+}
+
+h3 {
+	color: #72A6E0;
+}
+
+a {
+	color: #2196F3;
+}
+
+li {
+	margin-bottom: 0.75%; /* More appropriately spaces list elements */
+}
+
+ul > li {
+	list-style: none;
+}
+
+aside {
+	font-style: italic;
+}
+
+code {
+	font-family: "Source Code Pro";
+	background-color: #f2f2f2;
+}
+
+pre {
+	margin-left: 30px;
+}
+
+
+/********** RESPONSIVE **********/
+#mobile {
+	display: none;
+}
+
+#responsive-timetable {
+	display: none;
+}
+
+
+/********** MENU BAR **********/
+/* Menu bar creation aided by http://www.w3schools.com/css/css_navbar.asp */
+header {
+	z-index: 1; /* Places menu bar over other elements */
+	position: fixed; /* Menu bar will always be at the top of the screen, even while scrolling */
+	background-color: #1566C0;
+	width: 100%;
+	top: 0;
+}
+
+/* Buttons created with assistance from http://www.w3schools.com/css/css3_buttons.asp */
+.button {
+  border: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #0E4786;
+  color: white;
+  padding: 20px 35px; /* Button sizes remain consistent through screen/browser resize */
+  float: left;
+}
+
+.button:focus {
+	border: none;
+}
+
+/* Highlights the current page on the menu bar */
+.current-page {
+	background-color: #D68100;
+}
+
+/* Dropdown menu created with help from http://www.w3schools.com/css/css_dropdowns.asp */
+.dropdown {
+	position: absolute;
+	display: inline;
+	float: left;
+}
+
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	margin-top: 59px;
+}
+
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
+
+.dropdown-menu .button {
+	border-bottom: 1px solid #0E4786;
+	color: black;
+	background-color: #72a3d9;
+	box-shadow: 3px 3px 1px gray;
+	min-width: 100%;
+}
+
+.icon {
+	float: left;
+	margin-right: 3%;
+}
+
+
+/********** FOOTER **********/
+footer {
+	margin: 5% auto 5% auto;
+}
+
+footer p {
+	color: gray;
+	font-size: 0.7em;
+}
+
+/* Gradated <hr/> found at https://css-tricks.com/examples/hrs/ */
+hr {
+	clear: both;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	width: 100%;
+}
+
+
+/********** TEXT **********/
+/*  Classes .description and .service are used on the homepage and allow for a bold 'heading' style for the name of the service offered, and an italicised description of the service */
+.description {
+	font-weight: lighter;
+	font-style: italic;
+}
+
+.service {
+	font-weight: bold;
+}
+
+
+/********** IMAGES **********/
+#logo {
+	float: right;
+	max-height: 100%;
+}
+
+img {
+	transition: transform 6s ease-out;
+}
+
+img:hover {
+	transform: scale(1.1, 1.1);
+	transition: transform 4s ease-out;
+}
+
+
+/********** FORMS **********/
+#submit-button {
+	background-color: #D68100;
+	cursor: pointer;
+	transition: background-color 0.1s ease-out;
+}
+
+#submit-button:hover {
+	background-color: #2F1C00;
+	transition: background-color 0.1s ease-out;
+}
+
+fieldset {
+	margin: 1.5% 1.5% 0.5% 1.5%; /* Spaces checkbox and radio button forms away from of window */
+}
+
+legend {
+	margin-left: 1.5%; /* Aligns legend with other text */
+}
+
+input[type="radio"] {
+	margin-left: 50px; /* Indents radio buttons */
+}
+
+input, textarea {
+	border: 1px solid #FF9E08;
+}
+
+input[type="submit"] {
+	margin: 0.5% 0 0.5% 1.5%;
+}
+
+#skills > * {
+	display: inline-block; /* Allows skills checkboxes to align next to each to avoid taking up excessive amounts of screen space. */
+}
+
+.apply-button {
+	border-radius: 8px;
+	padding: 15px 25px;
+	margin-left: 30px;
+	background-color: #1566C0;
+	color: white;
+	transition: background-color 0.1s ease-out;
+	float: none;
+}
+
+
+/********** ABOUT **********/
+/* Specific rules for the about.html page as outlined in the assignment criteria */
+/* Additional rules to this effect can be found under TIMETABLE */
+
+.about {
+	display: inline-block;
+	margin: 15px 0 15px 30px; /* Spaces text elements on the about page to fill a more appropriate amount of screen space */
+}
+
+h2.about {
+	font-size: 1em;
+}
+
+#about-left, #about-right {
+	width: 42%;
+}
+
+#about-left {
+	float: left;
+	clear: none;
+}
+
+#about-right {
+	margin: 80px 10% 3% 0;
+	float: right;
+}
+
+#about-right * {
+	float: right;
+	margin: 0;
+}
+
+#about-right img {
+	max-width: 10%;
+	min-width: 100px;
+	border: 4px double black;
+	padding: 40px;
+}
+
+#about-right div {
+	display: block;
+	margin-top: 10px;
+}
+
+#about-right div * {
+	float: none; /* Correctly orders text elements. Without this rule they display back to front. */
+}
+
+#name {
+	font-size: 4.5em; /* 150% of perviously specified 3em size */
+	text-align: left;
+	font-weight: bold;
+}
+
+#student-number {
+	font-family: courier, monospace;
+	text-align: right;
+	float: right;
+}
+
+#tutor {
+	text-align: left;
+}
+
+#tutorial {
+	text-align: right;
+}
+
+#tutor, #tutorial {
+	clear: right; /* Positions these elements underneath the photo */
+}
+
+#course {
+	float: left;
+}
+
+#course p {
+	color: #FF9E08;
+}
+
+#email {
+	float: none;
+	font-size: 75%;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+/********** TIMETABLE **********/
+table {
+	clear: both;
+	max-width: 70%;
+	margin: auto;
+	border-collapse: collapse; /*http://www.w3schools.com/css/css_table.asp*/
+	text-align: center;
+	background-color: rgba(173, 216, 230, .3);
+}
+
+tr, td, th {
+	z-index: 0;
+}
+
+
+td, th {
+	padding: 10px;
+	border: 1px solid gray;
+}
+
+th {
+	font-weight: bold;
+	background-color: rgb(14, 71, 134);
+}
+
+td {
+	opacity: 0.7;
+	color: transparent;
+	text-shadow: 0 0 1px rgba(0,0,0,0.95);
+	transition: border-radius .8s, ease-out, color .2s ease-out, text-shadow .2s ease-out, transform .1s ease-out, box-shadow .3s ease-out, opacity .3s ease-out;
+}
+
+td.no-hover {
+	box-shadow: none;
+	color: black;
+	text-shadow: none;
+}
+
+/* Sets background colours for each subject */
+.subject-NAS {
+	background-color: rgb(92, 214, 92);
+}
+
+.subject-ITP {
+	background-color: rgb(255, 51, 51);
+}
+
+.subject-CWA {
+	background-color: rgb(255, 255, 102);
+}
+
+.subject-CLE {
+	background-color: rgb(51, 102, 255);
+}
+
+#eoi {
+	clear: both;
+	max-width: 100%;
+	margin-top: 50px;
+	border-collapse: collapse; /*http://www.w3schools.com/css/css_table.asp*/
+	text-align: center;
+	background-color: white;
+}
+
+#eoi * {
+	font-size: 0.9em;
+	padding: 2px;
+}
+
+#eoi td {
+	opacity: 1;
+	color: black;
+	text-shadow: none;
+	transition: none;
+}
+
+#eoi th {
+	font-weight: bold;
+	background-color: white;
+}
+
+#eoi *:hover {
+	box-shadow: none;
+	color: black;
+	text-shadow: none;
+	transform: none;
+}
+
+
+/********** ANIMATIONS AND TRANSITIONS **********/
+.button:hover {
+	background-color: #020E1A;
+}
+
+.current-page:hover {
+	background-color: #2F1C00;
+}
+
+.apply-button:hover {
+	background-color: #020E1A;
+}
+
+.dropdown-menu > .button:hover {
+	color: white;
+	background-color: #1566c0;
+}
+
+/* :not selector selects all elements that are not declared in its parentheses */
+td:not(.no-hover):hover {
+	/* Transform rule - http://www.w3schools.com/css/css3_3dtransforms.asp*/
+	opacity: 1;
+	color: black;
+	text-shadow: 0 0 0 rgba(0,0,0,0);
+	box-shadow: 3px 3px 10px gray;
+	border-radius: 8px;
+	transform: translate(1px, 1px);
+	cursor: default;
+	transition: border-radius .8s ease-out, color .2s ease-in, text-shadow .2s ease-in, transform .1s ease-out, box-shadow .3s ease-out, opacity .3s ease-out;
+}
+
+
+/********** LAYOUT **********/
+#enhancement-responsive-design {
+	float: left;
+	width: 50%;
+}
+
+#enhancement-interactivity {
+	float: right;
+	width: 50%;
+}
+
+#management-form {
+	margin-top: 85px;
+}
